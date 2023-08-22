@@ -4,6 +4,8 @@
  */
 package a.tp3_individual;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Bruno
@@ -29,10 +31,6 @@ public class InterfazLogin extends javax.swing.JFrame {
 
         jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        loginExitosoPopup = new javax.swing.JDialog();
-        label1 = new java.awt.Label();
-        loginFallidoPopup = new javax.swing.JDialog();
-        label2 = new java.awt.Label();
         textoMail = new javax.swing.JTextField();
         labelContrasenia = new javax.swing.JPasswordField();
         botonLogin = new javax.swing.JButton();
@@ -50,47 +48,6 @@ public class InterfazLogin extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        loginExitosoPopup.setTitle("Logeado Exitosamente");
-        loginExitosoPopup.setSize(new java.awt.Dimension(300, 300));
-
-        label1.setText("Logeado Exitosamente");
-
-        javax.swing.GroupLayout loginExitosoPopupLayout = new javax.swing.GroupLayout(loginExitosoPopup.getContentPane());
-        loginExitosoPopup.getContentPane().setLayout(loginExitosoPopupLayout);
-        loginExitosoPopupLayout.setHorizontalGroup(
-            loginExitosoPopupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginExitosoPopupLayout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-        );
-        loginExitosoPopupLayout.setVerticalGroup(
-            loginExitosoPopupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginExitosoPopupLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-        );
-
-        loginFallidoPopup.setTitle("Error al Logearse");
-        loginFallidoPopup.setSize(new java.awt.Dimension(300, 300));
-
-        label2.setText("Su nombre de usuario u contraseña no son correctas");
-
-        javax.swing.GroupLayout loginFallidoPopupLayout = new javax.swing.GroupLayout(loginFallidoPopup.getContentPane());
-        loginFallidoPopup.getContentPane().setLayout(loginFallidoPopupLayout);
-        loginFallidoPopupLayout.setHorizontalGroup(
-            loginFallidoPopupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label2, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
-        );
-        loginFallidoPopupLayout.setVerticalGroup(
-            loginFallidoPopupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginFallidoPopupLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -158,9 +115,9 @@ public class InterfazLogin extends javax.swing.JFrame {
     private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed
         if(textoMail.getText().equals("alumno@ulp.edu.ar")&&
            labelContrasenia.getText().equals("12345678")){
-            loginExitosoPopup.show();
+            JOptionPane.showMessageDialog(null, "Login exitoso", "Login Exitoso", 0);
         }else{
-            loginFallidoPopup.show();
+           JOptionPane.showMessageDialog(null, "Contraseña y/o usuario erroneos", "Login fallido", 0);
         }
     }//GEN-LAST:event_botonLoginActionPerformed
 
@@ -206,11 +163,7 @@ public class InterfazLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
-    private java.awt.Label label1;
-    private java.awt.Label label2;
     private javax.swing.JPasswordField labelContrasenia;
-    private javax.swing.JDialog loginExitosoPopup;
-    private javax.swing.JDialog loginFallidoPopup;
     private javax.swing.JTextField textoMail;
     // End of variables declaration//GEN-END:variables
 }
